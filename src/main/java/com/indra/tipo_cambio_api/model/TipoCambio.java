@@ -20,7 +20,7 @@ public class TipoCambio {
     @Column(name = "tipo_cambio", nullable = false)
     private BigDecimal tipoCambio;
 
-    // Getters y setters
+
     public Long getId() {
         return id;
     }
@@ -45,11 +45,10 @@ public class TipoCambio {
         this.monedaDestino = monedaDestino;
     }
 
-    public BigDecimal getTipoCambio() {  // Aquí está el getter que necesitas
+    public BigDecimal getTipoCambio() {
         return tipoCambio;
     }
 
-    public void setTipoCambio(BigDecimal tipoCambio) {  // Este es el setter para tipoCambio
-        this.tipoCambio = tipoCambio;
+    public void setTipoCambio(BigDecimal tipoCambio) {
     }
 }

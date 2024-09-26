@@ -25,20 +25,20 @@ public class TipoCambioController {
             @RequestParam String monedaDestino) {
         Map<String, Object> response = new HashMap<>();
         try {
-            // Llamar al servicio para aplicar el tipo de cambio
+            // Llamamos al servicio para aplicar el tipo de cambio
             BigDecimal montoConTipoCambio = tipoCambioService.aplicarTipoCambio(monto, monedaOrigen, monedaDestino);
 
-            // Preparar la respuesta con Map<String, Object>
-            response.put("monto", monto);  // Mantener el monto como Double
-            response.put("montoConTipoCambio", montoConTipoCambio);  // Mantener el BigDecimal
+            // Aqui preparanmos la respuesta con Map<String, Object>
+            response.put("monto", monto);
+            response.put("montoConTipoCambio", montoConTipoCambio);
             response.put("monedaOrigen", monedaOrigen);
             response.put("monedaDestino", monedaDestino);
-            response.put("tipoCambio", montoConTipoCambio);  // Devolver el valor del tipo de cambio
+            response.put("tipoCambio", montoConTipoCambio);
 
             return ResponseEntity.ok(response);
         } catch (IllegalArgumentException e) {
-            // Manejo de errores en caso de tipo de cambio no encontrado
-            response.put("error", e.getMessage());  // Asegurarse de que el error también sea Map<String, Object>
+            // Logica para el manejo de errores en caso de tipo de cambio no se encuentre
+            response.put("error", e.getMessage());
             return ResponseEntity.badRequest().body(response);
         }
     }
