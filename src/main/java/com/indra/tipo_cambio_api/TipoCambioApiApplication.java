@@ -9,5 +9,4 @@ public class TipoCambioApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TipoCambioApiApplication.class, args);
 	}
-
 }
